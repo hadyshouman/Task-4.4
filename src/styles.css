@@ -3,3 +3,40 @@
 
 /* The deliberately simple notice cards only display receipt metadata; they do not implement an ownership-claim workflow. */
 .handover-note{font-size:10px;line-height:1.45;color:#746e61;margin:2px 0 10px;padding-top:4px;}
+
+.filterbar{display:grid;grid-template-columns:minmax(220px,1.5fr) minmax(150px,1fr) minmax(150px,1fr) auto;align-items:end;gap:12px;margin-bottom:28px;padding:16px;background:#fff;border:1px solid #e2ded3;border-radius:9px;box-shadow:2px 4px #e6e0d2}
+.filterbar label{display:flex;flex-direction:column;gap:7px;font-size:11px;font-weight:700;color:#67665e}
+.filterbar input,.filterbar select{width:100%;border:1px solid #d7d5ca;border-radius:5px;padding:11px;background:#fff;font-size:12px;color:#555}
+.filterbar .filterbuttons{padding-bottom:1px}
+@media(max-width:750px){.filterbar{grid-template-columns:1fr 1fr}.filterbar label:first-child{grid-column:1/-1}.filterbar .filterbuttons{grid-column:1/-1}}
+@media(max-width:475px){.filterbar{grid-template-columns:1fr}.filterbar label:first-child,.filterbar .filterbuttons{grid-column:auto}}
+
+/* Keep every notice card visually consistent across statuses. */
+.sticky,.sticky:nth-child(2n),.sticky:nth-child(3n){height:280px;min-height:280px;display:flex;flex-direction:column;overflow:hidden;background:#fff;border:1px solid #e2ded3;border-radius:8px;transform:none;box-shadow:0 2px 8px #252c320d}
+.sticky-emoji{height:47px;flex:0 0 47px;margin:10px 0}
+.sticky h3{flex:0 0 auto}
+.sticky p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;min-height:0;max-height:3em}
+.handover-note{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;min-height:2.9em}
+.sticky-bottom{margin-top:auto}
+@media(max-width:475px){.sticky,.sticky:nth-child(2n),.sticky:nth-child(3n){height:280px;min-height:280px}}
+
+/* Warm noticeboard styling for search and browse controls. */
+.filterbar{background:#fff9e9;border:1px solid #e8d9b7;border-radius:10px;box-shadow:0 4px 0 #e6ddc9;padding:18px 20px;gap:14px}
+.filterbar label{color:#7a6240;font-size:11px;letter-spacing:.02em}
+.filterbar input,.filterbar select{min-height:43px;border:1px solid #d9c9a8;border-radius:6px;background:#fffdf7;color:#393a34;padding:11px 13px;transition:border-color .16s ease,box-shadow .16s ease}
+.filterbar input::placeholder{color:#a69a83}
+.filterbar input:focus,.filterbar select:focus{outline:0;border-color:#c58b3f;box-shadow:0 0 0 3px #edcf8b66}
+.filterbar .filterbuttons{gap:8px}
+.filterbar .filterbuttons button{min-height:41px;border:1px solid #d8c89f;border-radius:6px;background:#fffdf7;color:#645338;padding:10px 14px;font-size:11px;font-weight:700;transition:background .16s ease,border-color .16s ease,transform .16s ease}
+.filterbar .filterbuttons button:first-child{background:#f4d572;border-color:#e1bf58;color:#3b3524}
+.filterbar .filterbuttons button:hover{border-color:#bb9149;transform:translateY(-1px)}
+.filterbar .filterbuttons button:first-child:hover{background:#edca59}
+@media(max-width:750px){.filterbar{padding:15px}}
+.filterbar .filterbuttons button:first-child{background:#ecebe7;border-color:#d7d5ce;color:#5f605d}
+.filterbar .filterbuttons button:first-child:hover{background:#e2e1dc;border-color:#c5c3bb}
+.edit-report{border:1px solid #ddc888;border-radius:5px;background:#fff4ce;color:#65502d;padding:6px 10px;font-size:10px;font-weight:700}
+.edit-report:hover{background:#f7e5ad}
+.report-cta{display:block;margin-top:16px;background:#293036;color:#fff;border:0;border-radius:6px;padding:12px 18px;font-size:12px;font-weight:800;box-shadow:0 3px 0 #c7bda8}
+.report-cta:hover{background:#41494e}
+.board-grid.single-status{grid-template-columns:minmax(0,1fr)}
+.single-status .sticky-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));align-items:stretch}
